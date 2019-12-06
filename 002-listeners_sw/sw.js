@@ -27,11 +27,18 @@ self.addEventListener('activate', event => {
 // FETCH: manejo de peticiones HTTP
 self.addEventListener('fetch', event => {
     // apicar estrategias de cache
-    console.log('SW:', event.request.url);
+    // console.log('SW:', event.request.url);
 
-    if (event.request.url.includes('https://reqres.in/')) {
-        const resp = new Response(`{ok: false, mensaje: 'jajaja :v'}`);
+    // if (event.request.url.includes('https://reqres.in/')) {
+    //     const resp = new Response(`{ok: false, mensaje: 'jajaja :v'}`);
 
-        event.respondWith(resp);
-    }
+    //     event.respondWith(resp);
+    // }
+});
+
+// SYNC: recuperamos la conexion a internet
+self.addEventListener('sync', event => {
+    console.log('tenemos conexión');
+    console.log(event);
+    console.log(event.tag);
 })
