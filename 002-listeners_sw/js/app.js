@@ -6,10 +6,12 @@ if (navigator.serviceWorker) {
             //     reg.sync.register('posteo-gatitos');
             //     console.log('se enviaron fotos de gatitos al server');
             // }, 10000);
-            Notification.requestPermission().then(result => {
-                console.log(result);
-                reg.showNotification(`Hellooo Papurriii!!!`);
-            });
+
+            // aplica notificacioens
+            // Notification.requestPermission().then(result => {
+            //     console.log(result);
+            //     reg.showNotification(`Hellooo Papurriii!!!`);
+            // });
         });
 }
 
