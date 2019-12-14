@@ -45,12 +45,12 @@ function manejoApiMensaje(cacheName, req) {
         // POSTEO de un nuevo mensaje
 
 
-        if (self.register.sync) {
+        if (self.registration.sync) {
             // .text() extrea la información que contiene el request
-            req.clone().text().then(body => {
+            return req.clone().text().then(body => {
                 // console.log(body);
                 const bodyObj = JSON.parse(body);
-                guardarMensaje(bodyObj);
+                return guardarMensaje(bodyObj);
             });
         } else {
             // tengo que guardar en el indexedDB
@@ -70,3 +70,12 @@ function manejoApiMensaje(cacheName, req) {
             });
     }
 }
+
+// tareas asincronas
+self.addEventListener('sync', e => {
+    console.log('SW: Sync');
+    if (e.tag === 'nuevo-post') {
+        // postear a BD cuando hay conexión
+        // e.waintUntil();
+    }
+});
