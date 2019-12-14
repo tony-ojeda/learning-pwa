@@ -39,7 +39,7 @@ function actualizaCacheStatico(staticCache, req, APP_SHELL_INMUTABLE) {
 }
 
 // Network with cache fallback / update
-function manejoApiMensaje(cacheName, req) {
+function manejoApiMensajes(cacheName, req) {
 
     if (req.clone().method === 'POST') {
         // POSTEO de un nuevo mensaje
@@ -70,12 +70,3 @@ function manejoApiMensaje(cacheName, req) {
             });
     }
 }
-
-// tareas asincronas
-self.addEventListener('sync', e => {
-    console.log('SW: Sync');
-    if (e.tag === 'nuevo-post') {
-        // postear a BD cuando hay conexión
-        // e.waintUntil();
-    }
-});

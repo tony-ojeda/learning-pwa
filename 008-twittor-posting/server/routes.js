@@ -35,9 +35,9 @@ router.post('/', function(req, res) {
         user: req.body.user
     };
 
-    mensajes.push(mensajes);
+    mensajes.push(mensaje);
 
-    console.log(mensajes);
+    console.log('post api', mensajes);
 
     res.json({
         ok: true,
