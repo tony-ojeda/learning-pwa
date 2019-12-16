@@ -170,3 +170,17 @@ function getMensajes() {
 }
 
 getMensajes();
+
+// Detectar cambios de conexión
+function isOnline() {
+    if (navigator.onLine) {
+        // tenemos conexión
+        console.log('Estamos online');
+    } else {
+        // No tenemos conexión
+        console.log('Estamos offline');
+    }
+}
+
+window.addEventListener('online', isOnline);
+window.addEventListener('offline', isOnline);
