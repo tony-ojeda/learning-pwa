@@ -175,10 +175,19 @@ getMensajes();
 function isOnline() {
     if (navigator.onLine) {
         // tenemos conexión
-        console.log('Estamos online');
+        // console.log('Estamos online');
+        mdtoast('Online', {
+            interaction: true,
+            interactionTimeout: 1000,
+            actionText: 'OK'
+        }).show();
     } else {
         // No tenemos conexión
-        console.log('Estamos offline');
+        mdtoast('Offline', {
+            interaction: true,
+            actionText: 'OK',
+            type: 'warning'
+        }).show();
     }
 }
 
